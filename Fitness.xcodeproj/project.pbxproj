@@ -13,6 +13,9 @@
 		3A0E0E1B2515D06C00D80E16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E0E1A2515D06C00D80E16 /* Preview Assets.xcassets */; };
 		3A0E0E252515D42900D80E16 /* ButtonMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E0E242515D42900D80E16 /* ButtonMods.swift */; };
 		3A0E0E282515D52400D80E16 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E0E272515D52400D80E16 /* Color+Extension.swift */; };
+		95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7ABF253C7EC90013DB80 /* CreateView.swift */; };
+		95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */; };
+		95DE7AC6253C86DD0013DB80 /* RemindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC5253C86DD0013DB80 /* RemindView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		3A0E0E1C2515D06C00D80E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A0E0E242515D42900D80E16 /* ButtonMods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMods.swift; sourceTree = "<group>"; };
 		3A0E0E272515D52400D80E16 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		95DE7ABF253C7EC90013DB80 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		95DE7AC5253C86DD0013DB80 /* RemindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +64,14 @@
 			children = (
 				3A0E0E132515D06A00D80E16 /* FitnessApp.swift */,
 				3A0E0E152515D06A00D80E16 /* LandingPage.swift */,
+				95DE7ABF253C7EC90013DB80 /* CreateView.swift */,
 				3A0E0E242515D42900D80E16 /* ButtonMods.swift */,
 				3A0E0E272515D52400D80E16 /* Color+Extension.swift */,
 				3A0E0E172515D06C00D80E16 /* Assets.xcassets */,
 				3A0E0E1C2515D06C00D80E16 /* Info.plist */,
 				3A0E0E192515D06C00D80E16 /* Preview Content */,
+				95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */,
+				95DE7AC5253C86DD0013DB80 /* RemindView.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -148,6 +157,9 @@
 				3A0E0E252515D42900D80E16 /* ButtonMods.swift in Sources */,
 				3A0E0E142515D06A00D80E16 /* FitnessApp.swift in Sources */,
 				3A0E0E282515D52400D80E16 /* Color+Extension.swift in Sources */,
+				95DE7AC6253C86DD0013DB80 /* RemindView.swift in Sources */,
+				95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */,
+				95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mingg.Fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mingg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mingg.Fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mingg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
