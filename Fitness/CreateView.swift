@@ -16,22 +16,40 @@ struct CreateView: View{
         }
     }
     
+    var actionSheet: ActionSheet {
+        ActionSheet(title: Text("Select"), buttons: viewModel.displayOptions.indices.map { index in
+            let option = viewModel.displayOptions[index]
+            return ActionSheet.Button.default(Text(option.formatted)) {
+                viewModel.send(action: .selectedOption(index: index))
+            }
+        })
+    }
     
     var body: some View {
         ScrollView {
             VStack {
                 dropdownList
                 Spacer()
-                NavigationLink(destination: RemindView(), isActive: $isActive) {
+                NavigationLink(destination: RemindView(), isActive: $isActive)
+                {
                     Button(action: {
                         isActive = true
                     }) {
                         Text("Next")
                             .font(.system(size: 24, weight: .medium))
                     }
-                }.navigationBarTitle("Create")
-                .navigationBarBackButtonHidden(true)
+                }
             }
+            .actionSheet(isPresented: Binding<Bool>(
+                get: {
+                viewModel.hasSelectedDropdown
+            }, set: {_ in})
+            ) {
+                actionSheet
+            }
+            .navigationBarTitle("Create")
+            .navigationBarBackButtonHidden(true)
+            .padding(.bottom, 15)
         }
     }
 }

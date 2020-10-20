@@ -4,14 +4,52 @@
 //
 //  Created by Harsh Verma on 18/10/20.
 //
-
-import Foundation
 import SwiftUI
 
 final class CreateChallengeViewModel: ObservableObject {
-    @Published private(set) var dropdowns: [ChallengePartViewModel] = [
+    @Published var dropdowns: [ChallengePartViewModel] = [
         .init(type: .exercise), .init(type: .startAmount), .init(type: .increase), .init(type: .length)]
-}
+    
+    
+    var hasSelectedDropdown: Bool {
+        selectedDropdownIndex != nil
+    }
+    
+    var selectedDropdownIndex: Int? {
+        dropdowns.enumerated().first(where: {$0.element.isSelected})?.offset
+    }
+    
+    var displayOptions: [DropdownOption] {
+        guard let selectedDropdownIndex = selectedDropdownIndex else {return []}
+        return dropdowns[selectedDropdownIndex].options
+    }
+    
+    enum Action {
+        case selectedOption(index: Int)
+    }
+    
+    func send(action: Action) {
+        switch action {
+        case let .selectedOption(index):
+            guard let selectedDropdownIndex = selectedDropdownIndex else {return}
+            clearSelectedOptions()
+            dropdowns[selectedDropdownIndex].options[index].isSelected = true
+            clearSelectedDropdown()
+        }
+    }
+    
+    func clearSelectedOptions() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else {return}
+        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
+            dropdowns[selectedDropdownIndex].options[index].isSelected = false
+        }
+    }
+    
+    func clearSelectedDropdown() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else {return}
+        dropdowns[selectedDropdownIndex].isSelected = false
+        }
+    }
 
 
 extension CreateChallengeViewModel {
@@ -43,6 +81,8 @@ extension CreateChallengeViewModel {
             self.type = type
         }
         
+        
+        
         // MARK:- CUSTOM ENUMS
         enum ChallengePartType: String, CaseIterable {
             case exercise = "Exercise"
@@ -73,7 +113,7 @@ extension CreateChallengeViewModel {
         enum IncreaseOption: Int, CaseIterable, DropdownOptionProtocol {
             case one = 1, two, three, four, five
             var toDropdownOption: DropdownOption {
-                .init(type: .number(rawValue), formatted: "+s\(rawValue)", isSelected: self == .one)
+                .init(type: .number(rawValue), formatted: "+\(rawValue)", isSelected: self == .one)
             }
         }
         
@@ -84,5 +124,7 @@ extension CreateChallengeViewModel {
                 .init(type: .number(rawValue), formatted: "\(rawValue) Days", isSelected: self == .seven)
             }
         }
+        
+        
     }
 }

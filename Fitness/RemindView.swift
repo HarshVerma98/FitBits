@@ -24,6 +24,7 @@ struct RemindView: View {
                     .foregroundColor(.primary)
             }
         }.navigationTitle("Remind Me")
+        .padding(.bottom, 15)
     }
 }
 

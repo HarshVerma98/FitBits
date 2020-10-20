@@ -28,7 +28,7 @@ struct LandingPage: View {
                         
                     }
                 }
-                ).padding(.horizontal, 15).buttonStyle(ButtonMods())
+                ).padding(.horizontal,15).padding(.horizontal, 15).buttonStyle(ButtonMods())
                 }
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Image("main").resizable().aspectRatio(contentMode: .fill).overlay(Color.black.opacity(0.4)).frame(width: proxy.size.width).edgesIgnoringSafeArea(.all))
