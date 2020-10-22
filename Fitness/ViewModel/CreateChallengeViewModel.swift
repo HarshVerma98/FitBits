@@ -72,14 +72,14 @@ final class CreateChallengeViewModel: ObservableObject {
     
     private func currentUser() -> AnyPublisher<UserId, FitnessCustomError> {
         return userService.currentUser().flatMap { user -> AnyPublisher<UserId, FitnessCustomError> in
-            return Fail(error: .auth(description: "FIREBASE FAULT")).eraseToAnyPublisher()
-            //            if let user = user?.uid {
-//                return Just(user)
-//                    .setFailureType(to: FitnessCustomError.self)
-//                    .eraseToAnyPublisher()
-//            }else {
-//                return self.userService.signInAnonymously().map {$0.uid}.eraseToAnyPublisher()
-//            }
+           //return Fail(error: .auth(description: "FIREBASE FAULT")).eraseToAnyPublisher()
+                        if let user = user?.uid {
+                return Just(user)
+                    .setFailureType(to: FitnessCustomError.self)
+                    .eraseToAnyPublisher()
+            }else {
+                return self.userService.signInAnonymously().map {$0.uid}.eraseToAnyPublisher()
+            }
         }.eraseToAnyPublisher()
     }
     

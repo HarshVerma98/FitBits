@@ -11,6 +11,7 @@ import FirebaseAuth
 protocol UserServiceProtocol {
     func currentUser() -> AnyPublisher<User?, Never>
     func signInAnonymously() -> AnyPublisher<User, FitnessCustomError>
+    func observeAuthChanges() -> AnyPublisher<User?, Never>
 }
 
 
@@ -31,5 +32,7 @@ final class UserService: UserServiceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    
+    func observeAuthChanges() -> AnyPublisher<User?, Never> {
+        Publishers.AuthPubs().eraseToAnyPublisher()
+    }
 }

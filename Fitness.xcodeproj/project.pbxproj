@@ -20,6 +20,7 @@
 		955A4F852541CD020034C951 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F842541CD020034C951 /* Challenge.swift */; };
 		955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F872541CE1C0034C951 /* ChallengeService.swift */; };
 		955A4F8B2541D6F80034C951 /* FitnessCustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */; };
+		955A4F8F2541E25C0034C951 /* AuthPubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F8E2541E25C0034C951 /* AuthPubs.swift */; };
 		955CB85E253F27A500FAEC99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */; };
 		95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7ABF253C7EC90013DB80 /* CreateView.swift */; };
 		95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */; };
@@ -43,6 +44,7 @@
 		955A4F842541CD020034C951 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		955A4F872541CE1C0034C951 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCustomError.swift; sourceTree = "<group>"; };
+		955A4F8E2541E25C0034C951 /* AuthPubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPubs.swift; sourceTree = "<group>"; };
 		955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95DE7ABF253C7EC90013DB80 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		3A0E0E122515D06A00D80E16 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				955A4F8D2541E24A0034C951 /* Pubs */,
 				955A4F832541CCF20034C951 /* Model */,
 				955A4F7E2541B5420034C951 /* Service */,
 				95409A54253C8CA3009BF4DB /* ViewModel */,
@@ -142,6 +145,14 @@
 				955A4F842541CD020034C951 /* Challenge.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		955A4F8D2541E24A0034C951 /* Pubs */ = {
+			isa = PBXGroup;
+			children = (
+				955A4F8E2541E25C0034C951 /* AuthPubs.swift */,
+			);
+			path = Pubs;
 			sourceTree = "<group>";
 		};
 		BD8F5EADCD55A77E7B2C2DB3 /* Pods */ = {
@@ -280,6 +291,7 @@
 				955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */,
 				95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */,
 				95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */,
+				955A4F8F2541E25C0034C951 /* AuthPubs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
