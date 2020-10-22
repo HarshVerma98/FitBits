@@ -17,6 +17,8 @@
 		95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95409A55253C8CB6009BF4DB /* CreateChallengeViewModel.swift */; };
 		95409A5A253C8D5A009BF4DB /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95409A59253C8D5A009BF4DB /* DropdownItemProtocol.swift */; };
 		955A4F802541B5990034C951 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F7F2541B5990034C951 /* UserService.swift */; };
+		955A4F852541CD020034C951 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F842541CD020034C951 /* Challenge.swift */; };
+		955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F872541CE1C0034C951 /* ChallengeService.swift */; };
 		955CB85E253F27A500FAEC99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */; };
 		95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7ABF253C7EC90013DB80 /* CreateView.swift */; };
 		95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */; };
@@ -37,6 +39,8 @@
 		95409A55253C8CB6009BF4DB /* CreateChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewModel.swift; sourceTree = "<group>"; };
 		95409A59253C8D5A009BF4DB /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
 		955A4F7F2541B5990034C951 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		955A4F842541CD020034C951 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		955A4F872541CE1C0034C951 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95DE7ABF253C7EC90013DB80 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 		3A0E0E122515D06A00D80E16 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				955A4F832541CCF20034C951 /* Model */,
 				955A4F7E2541B5420034C951 /* Service */,
 				95409A54253C8CA3009BF4DB /* ViewModel */,
 				3A0E0E132515D06A00D80E16 /* FitnessApp.swift */,
@@ -123,8 +128,17 @@
 			isa = PBXGroup;
 			children = (
 				955A4F7F2541B5990034C951 /* UserService.swift */,
+				955A4F872541CE1C0034C951 /* ChallengeService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		955A4F832541CCF20034C951 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				955A4F842541CD020034C951 /* Challenge.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BD8F5EADCD55A77E7B2C2DB3 /* Pods */ = {
@@ -254,10 +268,12 @@
 				3A0E0E252515D42900D80E16 /* ButtonMods.swift in Sources */,
 				3A0E0E142515D06A00D80E16 /* FitnessApp.swift in Sources */,
 				95409A5A253C8D5A009BF4DB /* DropdownItemProtocol.swift in Sources */,
+				955A4F852541CD020034C951 /* Challenge.swift in Sources */,
 				3A0E0E282515D52400D80E16 /* Color+Extension.swift in Sources */,
 				95DE7AC6253C86DD0013DB80 /* RemindView.swift in Sources */,
 				955A4F802541B5990034C951 /* UserService.swift in Sources */,
 				95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */,
+				955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */,
 				95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */,
 				95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */,
 			);
