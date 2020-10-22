@@ -22,6 +22,9 @@
 		955A4F8B2541D6F80034C951 /* FitnessCustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */; };
 		955A4F8F2541E25C0034C951 /* AuthPubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F8E2541E25C0034C951 /* AuthPubs.swift */; };
 		955A4F922541EC490034C951 /* TabViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F912541EC490034C951 /* TabViewContainer.swift */; };
+		955A4F962541F68B0034C951 /* ChallengeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F952541F68B0034C951 /* ChallengeListView.swift */; };
+		955A4F992541F6A40034C951 /* ChallengeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F982541F6A40034C951 /* ChallengeListViewModel.swift */; };
+		955A4F9C2541F74E0034C951 /* QueryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F9B2541F74E0034C951 /* QueryPublisher.swift */; };
 		955CB85E253F27A500FAEC99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */; };
 		95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7ABF253C7EC90013DB80 /* CreateView.swift */; };
 		95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */; };
@@ -47,6 +50,9 @@
 		955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCustomError.swift; sourceTree = "<group>"; };
 		955A4F8E2541E25C0034C951 /* AuthPubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPubs.swift; sourceTree = "<group>"; };
 		955A4F912541EC490034C951 /* TabViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewContainer.swift; sourceTree = "<group>"; };
+		955A4F952541F68B0034C951 /* ChallengeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListView.swift; sourceTree = "<group>"; };
+		955A4F982541F6A40034C951 /* ChallengeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListViewModel.swift; sourceTree = "<group>"; };
+		955A4F9B2541F74E0034C951 /* QueryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryPublisher.swift; sourceTree = "<group>"; };
 		955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95DE7ABF253C7EC90013DB80 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */,
 				955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */,
 				955A4F912541EC490034C951 /* TabViewContainer.swift */,
+				955A4F952541F68B0034C951 /* ChallengeListView.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 			children = (
 				95409A55253C8CB6009BF4DB /* CreateChallengeViewModel.swift */,
 				95409A59253C8D5A009BF4DB /* DropdownItemProtocol.swift */,
+				955A4F982541F6A40034C951 /* ChallengeListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				955A4F8E2541E25C0034C951 /* AuthPubs.swift */,
+				955A4F9B2541F74E0034C951 /* QueryPublisher.swift */,
 			);
 			path = Pubs;
 			sourceTree = "<group>";
@@ -282,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A0E0E162515D06A00D80E16 /* LandingPage.swift in Sources */,
+				955A4F9C2541F74E0034C951 /* QueryPublisher.swift in Sources */,
 				3A0E0E252515D42900D80E16 /* ButtonMods.swift in Sources */,
 				3A0E0E142515D06A00D80E16 /* FitnessApp.swift in Sources */,
 				95409A5A253C8D5A009BF4DB /* DropdownItemProtocol.swift in Sources */,
@@ -291,8 +301,10 @@
 				955A4F802541B5990034C951 /* UserService.swift in Sources */,
 				95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */,
 				955A4F8B2541D6F80034C951 /* FitnessCustomError.swift in Sources */,
+				955A4F992541F6A40034C951 /* ChallengeListViewModel.swift in Sources */,
 				955A4F922541EC490034C951 /* TabViewContainer.swift in Sources */,
 				955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */,
+				955A4F962541F68B0034C951 /* ChallengeListView.swift in Sources */,
 				95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */,
 				95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */,
 				955A4F8F2541E25C0034C951 /* AuthPubs.swift in Sources */,

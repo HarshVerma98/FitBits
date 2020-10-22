@@ -25,7 +25,9 @@ struct TabViewContainer: View {
         case .log:
             Text("Log")
         case .challengeList:
-            Text("List of Challenges")
+            NavigationView {
+                ChallengeListView()
+            }
         case .settings:
             Text("Settings")
         }

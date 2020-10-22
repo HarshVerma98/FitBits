@@ -11,6 +11,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 protocol ChallengeServiceProtocol {
     func create(_ challenge: Challenge) -> AnyPublisher<Void, FitnessCustomError>
+    func observeChallenges(userId: UserId) -> AnyPublisher<[Challenge], FitnessCustomError>
 }
 
 final class ChallengeService: ChallengeServiceProtocol {
@@ -31,5 +32,18 @@ final class ChallengeService: ChallengeServiceProtocol {
             }
         }.eraseToAnyPublisher()
     }
-    
+    func observeChallenges(userId: UserId) -> AnyPublisher<[Challenge], FitnessCustomError> {
+        let query = db.collection("Challenges").whereField("userId", isEqualTo: userId)
+        return Publishers.QueryPublisher(query: query).flatMap { snapshot -> AnyPublisher<[Challenge], FitnessCustomError> in
+            do {
+                let challenge = try snapshot.documents.compactMap {
+                    try $0.data(as: Challenge.self)
+                }
+                return Just(challenge).setFailureType(to: FitnessCustomError.self).eraseToAnyPublisher()
+            }catch {
+                return Fail(error: .default(description: "Parsing error")).eraseToAnyPublisher()
+            }
+            
+        }.eraseToAnyPublisher()
+    }
 }
