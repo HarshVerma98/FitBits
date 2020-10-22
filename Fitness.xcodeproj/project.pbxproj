@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		7591EF6739F15D4B7D50E50E /* Pods_Fitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A11BE7FF13D126464B69491 /* Pods_Fitness.framework */; };
 		95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95409A55253C8CB6009BF4DB /* CreateChallengeViewModel.swift */; };
 		95409A5A253C8D5A009BF4DB /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95409A59253C8D5A009BF4DB /* DropdownItemProtocol.swift */; };
+		955A4F802541B5990034C951 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F7F2541B5990034C951 /* UserService.swift */; };
 		955CB85E253F27A500FAEC99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */; };
 		95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7ABF253C7EC90013DB80 /* CreateView.swift */; };
 		95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */; };
@@ -35,6 +36,7 @@
 		5A11BE7FF13D126464B69491 /* Pods_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95409A55253C8CB6009BF4DB /* CreateChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewModel.swift; sourceTree = "<group>"; };
 		95409A59253C8D5A009BF4DB /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
+		955A4F7F2541B5990034C951 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95DE7ABF253C7EC90013DB80 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		3A0E0E122515D06A00D80E16 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				955A4F7E2541B5420034C951 /* Service */,
 				95409A54253C8CA3009BF4DB /* ViewModel */,
 				3A0E0E132515D06A00D80E16 /* FitnessApp.swift */,
 				3A0E0E152515D06A00D80E16 /* LandingPage.swift */,
@@ -116,13 +119,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		955A4F7E2541B5420034C951 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				955A4F7F2541B5990034C951 /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		BD8F5EADCD55A77E7B2C2DB3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				113D17615C8EFDE800CCE774 /* Pods-Fitness.debug.xcconfig */,
 				D89750C5B718A446066EAB0C /* Pods-Fitness.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -246,6 +256,7 @@
 				95409A5A253C8D5A009BF4DB /* DropdownItemProtocol.swift in Sources */,
 				3A0E0E282515D52400D80E16 /* Color+Extension.swift in Sources */,
 				95DE7AC6253C86DD0013DB80 /* RemindView.swift in Sources */,
+				955A4F802541B5990034C951 /* UserService.swift in Sources */,
 				95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */,
 				95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */,
 				95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */,

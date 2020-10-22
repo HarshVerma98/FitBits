@@ -5,16 +5,21 @@
 //  Created by Harsh Verma on 18/10/20.
 //
 import SwiftUI
+import Combine
 
+typealias UserId = String
 final class CreateChallengeViewModel: ObservableObject {
     @Published var dropdowns: [ChallengePartViewModel] = [
         .init(type: .exercise), .init(type: .startAmount), .init(type: .increase), .init(type: .length)]
     
     
+    private let userService: UserServiceProtocol
+    private var cancellable: [AnyCancellable] = []
+    
     var hasSelectedDropdown: Bool {
         selectedDropdownIndex != nil
     }
-    
+    	
     var selectedDropdownIndex: Int? {
         dropdowns.enumerated().first(where: {$0.element.isSelected})?.offset
     }
@@ -26,6 +31,12 @@ final class CreateChallengeViewModel: ObservableObject {
     
     enum Action {
         case selectedOption(index: Int)
+        case createChallenge
+    }
+    
+    
+    init(userService: UserServiceProtocol = UserService()) {
+        self.userService = userService
     }
     
     func send(action: Action) {
@@ -35,6 +46,19 @@ final class CreateChallengeViewModel: ObservableObject {
             clearSelectedOptions()
             dropdowns[selectedDropdownIndex].options[index].isSelected = true
             clearSelectedDropdown()
+        case .createChallenge:
+            print("Created Successfully")
+            currentUser().sink { (done) in
+                switch done {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case .finished:
+                    print("Done in")
+                }
+            } receiveValue: { (userId) in
+                print("Obtained UserID is:- \(userId)")
+            }.store(in: &cancellable)
+
         }
     }
     
@@ -43,6 +67,18 @@ final class CreateChallengeViewModel: ObservableObject {
         dropdowns[selectedDropdownIndex].options.indices.forEach { index in
             dropdowns[selectedDropdownIndex].options[index].isSelected = false
         }
+    }
+    
+    private func currentUser() -> AnyPublisher<UserId, Error> {
+        return userService.currentUser().flatMap { user -> AnyPublisher<UserId, Error> in
+            if let user = user?.uid {
+                return Just(user)
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher()
+            }else {
+                return self.userService.signInAnonymously().map {$0.uid}.eraseToAnyPublisher()
+            }
+        }.eraseToAnyPublisher()
     }
     
     func clearSelectedDropdown() {

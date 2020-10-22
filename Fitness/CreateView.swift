@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateView: View{
     @StateObject var viewModel = CreateChallengeViewModel()
-    @State private var isActive = false
+    
     var dropdownList: some View {
         ForEach(viewModel.dropdowns.indices, id: \.self) { index in
             DropdownView(viewModel: $viewModel.dropdowns[index])
@@ -30,15 +30,14 @@ struct CreateView: View{
             VStack {
                 dropdownList
                 Spacer()
-                NavigationLink(destination: RemindView(), isActive: $isActive)
-                {
+                
                     Button(action: {
-                        isActive = true
+                        viewModel.send(action: .createChallenge)
                     }) {
-                        Text("Next")
+                        Text("Create")
                             .font(.system(size: 24, weight: .medium))
                     }
-                }
+                
             }
             .actionSheet(isPresented: Binding<Bool>(
                 get: {
