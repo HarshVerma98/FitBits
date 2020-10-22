@@ -11,9 +11,9 @@ struct CreateView: View{
     @StateObject var viewModel = CreateChallengeViewModel()
     
     var dropdownList: some View {
-//        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-//            DropdownView(viewModel: $viewModel.dropdowns[index])
-//        }
+        //        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
+        //            DropdownView(viewModel: $viewModel.dropdowns[index])
+        //        }
         Group {
             DropdownView(viewModel: $viewModel.exerciseDropDown)
             DropdownView(viewModel: $viewModel.startAmountDropDown)
@@ -22,26 +22,38 @@ struct CreateView: View{
         }
     }
     
-   
-    
-    var body: some View {
+    var mVC: some View {
         ScrollView {
             VStack {
                 dropdownList
                 Spacer()
                 
-                    Button(action: {
-                        viewModel.send(action: .createChallenge)
-                    }) {
-                        Text("Create")
-                            .font(.system(size: 24, weight: .medium))
-                    }
+                Button(action: {
+                    viewModel.send(action: .createChallenge)
+                }) {
+                    Text("Create")
+                        .font(.system(size: 24, weight: .medium))
+                }
                 
             }
-            
-            .navigationBarTitle("Create")
-            .navigationBarBackButtonHidden(true)
-            .padding(.bottom, 15)
         }
+    }
+    
+    
+    var body: some View {
+        ZStack {
+            if viewModel.isLoader {
+                ProgressView()
+            }else {
+                mVC
+            }
+        }.alert(isPresented: Binding<Bool>.constant($viewModel.error.wrappedValue != nil)) {
+            Alert(title: Text("Error!"), message: Text($viewModel.error.wrappedValue?.localizedDescription ?? ""), dismissButton: .default(Text("OK"), action: {
+                viewModel.error = nil
+            }))
+        }
+        .navigationBarTitle("Create")
+        .navigationBarBackButtonHidden(true)
+        .padding(15)
     }
 }

@@ -19,6 +19,7 @@
 		955A4F802541B5990034C951 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F7F2541B5990034C951 /* UserService.swift */; };
 		955A4F852541CD020034C951 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F842541CD020034C951 /* Challenge.swift */; };
 		955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F872541CE1C0034C951 /* ChallengeService.swift */; };
+		955A4F8B2541D6F80034C951 /* FitnessCustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */; };
 		955CB85E253F27A500FAEC99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */; };
 		95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7ABF253C7EC90013DB80 /* CreateView.swift */; };
 		95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */; };
@@ -41,6 +42,7 @@
 		955A4F7F2541B5990034C951 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		955A4F842541CD020034C951 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		955A4F872541CE1C0034C951 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
+		955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCustomError.swift; sourceTree = "<group>"; };
 		955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95DE7ABF253C7EC90013DB80 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */,
 				95DE7AC5253C86DD0013DB80 /* RemindView.swift */,
 				955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */,
+				955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				95DE7AC6253C86DD0013DB80 /* RemindView.swift in Sources */,
 				955A4F802541B5990034C951 /* UserService.swift in Sources */,
 				95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */,
+				955A4F8B2541D6F80034C951 /* FitnessCustomError.swift in Sources */,
 				955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */,
 				95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */,
 				95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */,
