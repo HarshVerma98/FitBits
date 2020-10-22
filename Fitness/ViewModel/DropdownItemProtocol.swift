@@ -11,6 +11,7 @@ protocol DropdownItemProtocol {
     var headerTitle: String {get}
     var dropdownTitle: String {get}
     var isSelected: Bool {get set}
+    var selectedOption: DropdownOption {get set}
 }
 
 protocol DropdownOptionProtocol {

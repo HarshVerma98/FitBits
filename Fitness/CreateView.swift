@@ -11,19 +11,18 @@ struct CreateView: View{
     @StateObject var viewModel = CreateChallengeViewModel()
     
     var dropdownList: some View {
-        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-            DropdownView(viewModel: $viewModel.dropdowns[index])
+//        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
+//            DropdownView(viewModel: $viewModel.dropdowns[index])
+//        }
+        Group {
+            DropdownView(viewModel: $viewModel.exerciseDropDown)
+            DropdownView(viewModel: $viewModel.startAmountDropDown)
+            DropdownView(viewModel: $viewModel.increaseDropDown)
+            DropdownView(viewModel: $viewModel.lengthDropDown)
         }
     }
     
-    var actionSheet: ActionSheet {
-        ActionSheet(title: Text("Select"), buttons: viewModel.displayOptions.indices.map { index in
-            let option = viewModel.displayOptions[index]
-            return ActionSheet.Button.default(Text(option.formatted)) {
-                viewModel.send(action: .selectedOption(index: index))
-            }
-        })
-    }
+   
     
     var body: some View {
         ScrollView {
@@ -39,13 +38,7 @@ struct CreateView: View{
                     }
                 
             }
-            .actionSheet(isPresented: Binding<Bool>(
-                get: {
-                viewModel.hasSelectedDropdown
-            }, set: {_ in})
-            ) {
-                actionSheet
-            }
+            
             .navigationBarTitle("Create")
             .navigationBarBackButtonHidden(true)
             .padding(.bottom, 15)
