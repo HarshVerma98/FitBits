@@ -38,7 +38,5 @@ class AppState: ObservableObject {
         self.userService = userService
         //try? Auth.auth().signOut()
         userService.observeAuthChanges().map{$0 != nil}.assign(to: &$isLoggedIn)
-        
-        
     }
 }
