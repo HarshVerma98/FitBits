@@ -20,7 +20,7 @@ struct Settings: View {
                 }
             }
         }.background(
-            NavigationLink(destination: LoginSignup(viewModel: .init(mode: .signup))
+            NavigationLink(destination: LoginSignup(viewModel: .init(mode: .signup, isPushed: $viewModel.loginSignup))
                            , isActive: $viewModel.loginSignup) {
                 
             }

@@ -11,15 +11,17 @@ struct LoginSignup: View {
     
     var emailTextField: some View {
         TextField("Email", text: $viewModel.emailText).modifier(TFRounded())
+            .autocapitalization(.none)
     }
     
     var passwordTextField: some View {
         SecureField("Password", text: $viewModel.passwordText).modifier(TFRounded())
+            .autocapitalization(.none)
     }
     
     var actionButton: some View {
         Button(viewModel.buttonTitle) {
-            
+            viewModel.tappedAction()
         }.padding()
         .frame(maxWidth: .infinity)
         .foregroundColor(.white)

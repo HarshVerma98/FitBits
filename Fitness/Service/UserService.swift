@@ -12,10 +12,30 @@ protocol UserServiceProtocol {
     func currentUser() -> AnyPublisher<User?, Never>
     func signInAnonymously() -> AnyPublisher<User, FitnessCustomError>
     func observeAuthChanges() -> AnyPublisher<User?, Never>
+    func linkAccount(email: String, password: String) -> AnyPublisher<Void, FitnessCustomError>
 }
 
 
 final class UserService: UserServiceProtocol {
+    func linkAccount(email: String, password: String) -> AnyPublisher<Void, FitnessCustomError> {
+        let emailCredit = EmailAuthProvider.credential(withEmail: email, password: password)
+        return Future<Void, FitnessCustomError> { promise in
+            Auth.auth().currentUser?.link(with: emailCredit) { result, error in
+                if let error = error {
+                    return promise(.failure(.default(description: error.localizedDescription)))
+                }else if let user = result?.user {
+                    Auth.auth().updateCurrentUser(user) { error in
+                        if let error = error {
+                            return promise(.failure(.default(description: error.localizedDescription)))
+                        }else {
+                            promise(.success(()))
+                        }
+                    }
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
     func currentUser() -> AnyPublisher<User?, Never> {
         Just(Auth.auth().currentUser).eraseToAnyPublisher()
     }

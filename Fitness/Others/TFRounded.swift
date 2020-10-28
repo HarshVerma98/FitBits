@@ -11,7 +11,7 @@ struct TFRounded: ViewModifier {
     func body(content: Content) -> some View {
         return content
             .font(.system(size: 16, weight: .medium))
-            .foregroundColor(Color(.systemGray3))
+            .foregroundColor(.primary)
             .padding()
             .cornerRadius(17)
             .overlay(
