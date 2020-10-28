@@ -14,10 +14,12 @@ final class ChallengeListViewModel: ObservableObject {
     @Published private(set) var error: FitnessCustomError?
     @Published private(set) var isLoading = false
     @Published private(set) var itemViewModel: [ChallengeItemViewModel] = []
+    @Published var modalCreation = false
     let title = "Challenges"
     
     enum Action {
         case retry
+        case create
     }
     
     init(userService: UserServiceProtocol = UserService(), challengeService: ChallengeServiceProtocol = ChallengeService()) {
@@ -31,6 +33,8 @@ final class ChallengeListViewModel: ObservableObject {
         switch action {
         case .retry:
             observeChallenges()
+        case .create:
+            modalCreation = true
         }
     }
     
@@ -55,6 +59,7 @@ final class ChallengeListViewModel: ObservableObject {
                 guard let self = self else {return}
                 self.isLoading = false
                 self.error = nil
+                self.modalCreation = false
                 self.itemViewModel = challenges.map { .init($0)}
             }.store(in: &cancellable)
 

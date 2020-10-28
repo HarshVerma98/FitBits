@@ -103,24 +103,18 @@
 		3A0E0E122515D06A00D80E16 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				95A3821A25499CE700D5AE1F /* Others */,
+				95A3821625499CB400D5AE1F /* Views */,
 				955A4F8D2541E24A0034C951 /* Pubs */,
 				955A4F832541CCF20034C951 /* Model */,
 				955A4F7E2541B5420034C951 /* Service */,
 				95409A54253C8CA3009BF4DB /* ViewModel */,
 				3A0E0E132515D06A00D80E16 /* FitnessApp.swift */,
-				3A0E0E152515D06A00D80E16 /* LandingPage.swift */,
-				95DE7ABF253C7EC90013DB80 /* CreateView.swift */,
-				3A0E0E242515D42900D80E16 /* ButtonMods.swift */,
-				3A0E0E272515D52400D80E16 /* Color+Extension.swift */,
 				3A0E0E172515D06C00D80E16 /* Assets.xcassets */,
 				3A0E0E1C2515D06C00D80E16 /* Info.plist */,
 				3A0E0E192515D06C00D80E16 /* Preview Content */,
-				95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */,
-				95DE7AC5253C86DD0013DB80 /* RemindView.swift */,
 				955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */,
 				955A4F8A2541D6F80034C951 /* FitnessCustomError.swift */,
-				955A4F912541EC490034C951 /* TabViewContainer.swift */,
-				955A4F952541F68B0034C951 /* ChallengeListView.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -138,6 +132,7 @@
 			children = (
 				95409A55253C8CB6009BF4DB /* CreateChallengeViewModel.swift */,
 				95409A59253C8D5A009BF4DB /* DropdownItemProtocol.swift */,
+				955A4F872541CE1C0034C951 /* ChallengeService.swift */,
 				955A4F982541F6A40034C951 /* ChallengeListViewModel.swift */,
 				95FDD81D25432091007CA413 /* ChallengeItemViewModel.swift */,
 			);
@@ -148,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				955A4F7F2541B5990034C951 /* UserService.swift */,
-				955A4F872541CE1C0034C951 /* ChallengeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -168,6 +162,28 @@
 				955A4F9B2541F74E0034C951 /* QueryPublisher.swift */,
 			);
 			path = Pubs;
+			sourceTree = "<group>";
+		};
+		95A3821625499CB400D5AE1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A0E0E152515D06A00D80E16 /* LandingPage.swift */,
+				95DE7ABF253C7EC90013DB80 /* CreateView.swift */,
+				95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */,
+				95DE7AC5253C86DD0013DB80 /* RemindView.swift */,
+				955A4F912541EC490034C951 /* TabViewContainer.swift */,
+				955A4F952541F68B0034C951 /* ChallengeListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95A3821A25499CE700D5AE1F /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				3A0E0E242515D42900D80E16 /* ButtonMods.swift */,
+				3A0E0E272515D52400D80E16 /* Color+Extension.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		BD8F5EADCD55A77E7B2C2DB3 /* Pods */ = {
