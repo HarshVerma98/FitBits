@@ -29,6 +29,7 @@
 		95DE7AC0253C7EC90013DB80 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7ABF253C7EC90013DB80 /* CreateView.swift */; };
 		95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */; };
 		95DE7AC6253C86DD0013DB80 /* RemindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE7AC5253C86DD0013DB80 /* RemindView.swift */; };
+		95FDD81E25432091007CA413 /* ChallengeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FDD81D25432091007CA413 /* ChallengeItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		95DE7ABF253C7EC90013DB80 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		95DE7AC2253C7F3C0013DB80 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		95DE7AC5253C86DD0013DB80 /* RemindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindView.swift; sourceTree = "<group>"; };
+		95FDD81D25432091007CA413 /* ChallengeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeItemViewModel.swift; sourceTree = "<group>"; };
 		D89750C5B718A446066EAB0C /* Pods-Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness.release.xcconfig"; path = "Target Support Files/Pods-Fitness/Pods-Fitness.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				95409A55253C8CB6009BF4DB /* CreateChallengeViewModel.swift */,
 				95409A59253C8D5A009BF4DB /* DropdownItemProtocol.swift */,
 				955A4F982541F6A40034C951 /* ChallengeListViewModel.swift */,
+				95FDD81D25432091007CA413 /* ChallengeItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				955A4F992541F6A40034C951 /* ChallengeListViewModel.swift in Sources */,
 				955A4F922541EC490034C951 /* TabViewContainer.swift in Sources */,
 				955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */,
+				95FDD81E25432091007CA413 /* ChallengeItemViewModel.swift in Sources */,
 				955A4F962541F68B0034C951 /* ChallengeListView.swift in Sources */,
 				95DE7AC3253C7F3C0013DB80 /* DropdownView.swift in Sources */,
 				95409A56253C8CB6009BF4DB /* CreateChallengeViewModel.swift in Sources */,

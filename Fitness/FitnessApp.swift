@@ -36,7 +36,7 @@ class AppState: ObservableObject {
     private let userService: UserServiceProtocol
     init(userService: UserServiceProtocol = UserService()) {
         self.userService = userService
-        try? Auth.auth().signOut()
+        //try? Auth.auth().signOut()
         userService.observeAuthChanges().map{$0 != nil}.assign(to: &$isLoggedIn)
         
         
