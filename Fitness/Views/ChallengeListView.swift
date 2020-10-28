@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ChallengeListView: View {
     @StateObject private var viewModel = ChallengeListViewModel()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var body: some View {
         ZStack {
             if viewModel.isLoading {
@@ -44,7 +45,7 @@ struct ChallengeListView: View {
         .sheet(isPresented: $viewModel.modalCreation) {
             NavigationView {
             CreateView()
-        }
+            }.preferredColorScheme(isDarkMode ? .dark: .light)
         }
         .navigationBarItems(trailing: Button {
             viewModel.send(action: .create)
