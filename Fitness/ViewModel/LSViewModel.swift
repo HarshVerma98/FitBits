@@ -21,6 +21,11 @@ final class LSViewModel: ObservableObject {
         self.mode = mode
         self.userService = userService
         self._isPushed = isPushed
+        
+        Publishers.CombineLatest($emailText, $passwordText).map { [weak self]email, password in
+            // Authenticity Check goes here
+            return self?.isValidEmail(email) == true && self?.isValidPassword(password) == true
+        }.assign(to: &$isValid)
     }
     
     var title: String {
@@ -44,7 +49,16 @@ final class LSViewModel: ObservableObject {
     func tappedAction() {
         switch mode {
         case .login:
-            print("Logged In")
+            userService.login(email: emailText, password: passwordText).sink { (completion) in
+                switch completion {
+                case let .failure(error):
+                    print("Error at Line 50 of LSViewModel Swift File \(error.localizedDescription)")
+                case .finished:
+                    break
+                }
+            } receiveValue: { (_) in}
+            .store(in: &cancellable)
+            
         case .signup:
             // Account Linking Here
             userService.linkAccount(email: emailText, password: passwordText).sink { [weak self]completion in
@@ -75,5 +89,17 @@ extension LSViewModel {
     enum Mode {
         case login
         case signup
+    }
+}
+
+extension LSViewModel {
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email) && email.count > 5
+    }
+    
+    func isValidPassword(_ password: String) -> Bool {
+        return password.count > 5
     }
 }

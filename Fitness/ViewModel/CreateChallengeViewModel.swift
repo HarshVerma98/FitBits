@@ -71,7 +71,7 @@ final class CreateChallengeViewModel: ObservableObject {
     
     
     private func currentUser() -> AnyPublisher<UserId, FitnessCustomError> {
-        return userService.currentUser().flatMap { user -> AnyPublisher<UserId, FitnessCustomError> in
+        return userService.currentUserPublisher().flatMap { user -> AnyPublisher<UserId, FitnessCustomError> in
            //return Fail(error: .auth(description: "FIREBASE FAULT")).eraseToAnyPublisher()
                         if let user = user?.uid {
                 return Just(user)
