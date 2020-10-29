@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 protocol ChallengeServiceProtocol {
     func create(_ challenge: Challenge) -> AnyPublisher<Void, FitnessCustomError>
     func observeChallenges(userId: UserId) -> AnyPublisher<[Challenge], FitnessCustomError>
+    func delete(_ challengeId: String) -> AnyPublisher<Void, FitnessCustomError>
 }
 
 final class ChallengeService: ChallengeServiceProtocol {
@@ -33,7 +34,7 @@ final class ChallengeService: ChallengeServiceProtocol {
         }.eraseToAnyPublisher()
     }
     func observeChallenges(userId: UserId) -> AnyPublisher<[Challenge], FitnessCustomError> {
-        let query = db.collection("Challenges").whereField("userId", isEqualTo: userId)
+        let query = db.collection("Challenges").whereField("userId", isEqualTo: userId).order(by: "startDate", descending: true)
         return Publishers.QueryPublisher(query: query).flatMap { snapshot -> AnyPublisher<[Challenge], FitnessCustomError> in
             do {
                 let challenge = try snapshot.documents.compactMap {
@@ -44,6 +45,18 @@ final class ChallengeService: ChallengeServiceProtocol {
                 return Fail(error: .default(description: "Parsing error")).eraseToAnyPublisher()
             }
             
+        }.eraseToAnyPublisher()
+    }
+    
+    func delete(_ challengeId: String) -> AnyPublisher<Void, FitnessCustomError> {
+        return Future<Void, FitnessCustomError> { promise in
+            self.db.collection("Challenges").document(challengeId).delete { (error) in
+                if let error = error {
+                    promise(.failure(.default(description: error.localizedDescription)))
+                }else {
+                    promise(.success(()))
+                }
+            }
         }.eraseToAnyPublisher()
     }
 }
