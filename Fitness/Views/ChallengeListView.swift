@@ -25,7 +25,9 @@ struct ChallengeListView: View {
                     .background(Rectangle().fill(Color.red).cornerRadius(6))
                 }
             }else {
-                mainContentView
+                mainContentView.onReceive(NotificationCenter.default.publisher(for: UIApplication.significantTimeChangeNotification)) { (_) in
+                    viewModel.send(action: .timeChange)
+                }
             }
         }
     }

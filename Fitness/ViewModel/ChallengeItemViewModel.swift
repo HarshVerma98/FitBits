@@ -32,11 +32,35 @@ struct ChallengeItemViewModel: Identifiable {
         }
         return abs(daysFromStart)
     }
-    private var isComplete: Bool {
+     var isComplete: Bool {
         daysFromStart - challenge.length >= 0
     }
     
     private let onDelete: (String) -> Void
+    private let onToggleComplete: (String, [Activity]) -> Void
+    let nowTitle = "Today"
+    
+    var RepTitle: String {
+        let repNumber = challenge.startAmount + (daysFromStart * challenge.increase)
+        let exercise: String
+        if repNumber == 1 {
+            var challengeExercise = challenge.exercise
+            challengeExercise.removeLast()
+            exercise = challengeExercise
+        }else {
+            exercise = challenge.exercise
+        }
+        return isComplete ? "Done" : "\(repNumber) " + exercise
+    }
+    
+    var shouldShow: Bool {
+        !isComplete
+    }
+    
+    var isDayComplete: Bool {
+        let today = Calendar.current.startOfDay(for: Date())
+        return challenge.activities.first(where: {$0.date == today})?.isComplete == true
+    }
     
     var statusText: String {
         guard !isComplete else {return "Done"}
@@ -46,14 +70,37 @@ struct ChallengeItemViewModel: Identifiable {
     var dailyIncrement: String {
         "+\(challenge.length) Daily"
     }
-    init(_ challenge: Challenge, onDelete: @escaping(String) -> Void) {
+    init(_ challenge: Challenge, onDelete: @escaping(String) -> Void, onToggleComplete: @escaping(String, [Activity]) -> Void) {
         self.challenge = challenge
         self.onDelete = onDelete
+        self.onToggleComplete = onToggleComplete
     }
     
    
     
-    func tappedDelete() {
-        onDelete(id)
+    
+    func send(action: Action) {
+        guard let id = challenge.id else {return}
+        switch action {
+        case .delete:
+            onDelete(id)
+        case .toggleComplete:
+            let today = Calendar.current.startOfDay(for: Date())
+            let activities = challenge.activities.map { activity -> Activity in
+                if today == activity.date {
+                    return .init(date: today, isComplete: !activity.isComplete)
+                }else {
+                    return activity
+                }
+            }
+            onToggleComplete(id, activities)
+        }
+    }
+    
+}
+extension ChallengeItemViewModel {
+    enum Action {
+        case delete
+        case toggleComplete
     }
 }
