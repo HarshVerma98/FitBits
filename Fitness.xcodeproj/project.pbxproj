@@ -26,6 +26,8 @@
 		955A4F992541F6A40034C951 /* ChallengeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F982541F6A40034C951 /* ChallengeListViewModel.swift */; };
 		955A4F9C2541F74E0034C951 /* QueryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A4F9B2541F74E0034C951 /* QueryPublisher.swift */; };
 		955CB85E253F27A500FAEC99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */; };
+		95714BE7254AE15500701886 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95714BE6254AE15500701886 /* ProgressCircleView.swift */; };
+		95714BEA254AF11F00701886 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95714BE9254AF11F00701886 /* ProgressViewModel.swift */; };
 		9588B0102549B0AA00B7EC38 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588B00F2549B0AA00B7EC38 /* LandingViewModel.swift */; };
 		9588B0132549B43000B7EC38 /* LoginSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588B0122549B43000B7EC38 /* LoginSignup.swift */; };
 		9588B0162549B50000B7EC38 /* LSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588B0152549B50000B7EC38 /* LSViewModel.swift */; };
@@ -62,6 +64,8 @@
 		955A4F982541F6A40034C951 /* ChallengeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListViewModel.swift; sourceTree = "<group>"; };
 		955A4F9B2541F74E0034C951 /* QueryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryPublisher.swift; sourceTree = "<group>"; };
 		955CB85D253F27A500FAEC99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95714BE6254AE15500701886 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		95714BE9254AF11F00701886 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		9588B00F2549B0AA00B7EC38 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		9588B0122549B43000B7EC38 /* LoginSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignup.swift; sourceTree = "<group>"; };
 		9588B0152549B50000B7EC38 /* LSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSViewModel.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				95A3822125499FBD00D5AE1F /* SettingsItemViewModel.swift */,
 				9588B00F2549B0AA00B7EC38 /* LandingViewModel.swift */,
 				9588B0152549B50000B7EC38 /* LSViewModel.swift */,
+				95714BE9254AF11F00701886 /* ProgressViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				955A4F952541F68B0034C951 /* ChallengeListView.swift */,
 				95A3821B25499F8C00D5AE1F /* Settings.swift */,
 				9588B0122549B43000B7EC38 /* LoginSignup.swift */,
+				95714BE6254AE15500701886 /* ProgressCircleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				3A0E0E142515D06A00D80E16 /* FitnessApp.swift in Sources */,
 				95409A5A253C8D5A009BF4DB /* DropdownItemProtocol.swift in Sources */,
 				955A4F852541CD020034C951 /* Challenge.swift in Sources */,
+				95714BEA254AF11F00701886 /* ProgressViewModel.swift in Sources */,
 				95A3822225499FBD00D5AE1F /* SettingsItemViewModel.swift in Sources */,
 				3A0E0E282515D52400D80E16 /* Color+Extension.swift in Sources */,
 				9588B01A2549B96B00B7EC38 /* TFRounded.swift in Sources */,
@@ -347,6 +354,7 @@
 				9588B0102549B0AA00B7EC38 /* LandingViewModel.swift in Sources */,
 				955A4F992541F6A40034C951 /* ChallengeListViewModel.swift in Sources */,
 				955A4F922541EC490034C951 /* TabViewContainer.swift in Sources */,
+				95714BE7254AE15500701886 /* ProgressCircleView.swift in Sources */,
 				955A4F882541CE1C0034C951 /* ChallengeService.swift in Sources */,
 				95A3821C25499F8C00D5AE1F /* Settings.swift in Sources */,
 				95FDD81E25432091007CA413 /* ChallengeItemViewModel.swift in Sources */,
